@@ -1,7 +1,22 @@
-FROM node:alpine
-WORKDIR /iss-position-noop
-COPY package.json ./
-COPY package-lock.json ./
-COPY ./ ./
+COMPONENT website service
+
+ROUTE * -m GET
+
+FROM node:16-alpine AS build
+
+WORKDIR iss-position-noop
+COPY package*.json ./
 RUN npm i
-CMD ["npm", "run", "start"]
+COPY index.html ./
+COPY vite.config.js ./
+COPY /public ./public
+COPY /src ./src
+RUN npm build
+
+FROM nginx:1-alpine
+
+COPY --from=build iss-position-noop/build /usr/share/nginx/html
+COPY nginx.conf /etc/nginx
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
