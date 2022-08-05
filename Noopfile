@@ -6,16 +6,13 @@ FROM node:16-alpine AS build
 
 WORKDIR iss-position-noop
 COPY package*.json ./
-RUN npm ci
-COPY tailwind.config.js ./
-COPY postcss.config.js ./
-COPY /public ./public
-COPY /src ./src
+COPY ./ ./
+RUN npm i
 RUN npm run build
 
 FROM nginx:1-alpine
 
-COPY --from=build iss-position-noop/dist /usr/share/nginx/html
+COPY --from=build iss-position-noop/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx
 
 EXPOSE 80
