@@ -23,7 +23,7 @@ function App() {
 
 	useEffect(() => {
 		fetchISSData();
-		setInterval(fetchISSData, 2000);
+		setInterval(fetchISSData, 10000);
 		setInterval(() => {
 			setProgress((prev) => prev + 5);
 		}, 100);
@@ -39,7 +39,7 @@ function App() {
 				<Coordinates latitude={latitude} longitude={longitude} />
 				<ProgressBar progress={progress} />
 				<a
-					href="https://github.com/rzmk/iss-position-spa"
+					href="https://github.com/rzmk/iss-position-noop"
 					target="_blank"
 					rel="noreferrer"
 				>
