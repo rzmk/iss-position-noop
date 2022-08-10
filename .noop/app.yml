@@ -23,3 +23,8 @@ components:
       command: 'nginx -g "daemon off;"'
       variables:
         NGINX_ENTRYPOINT_QUIET_LOGS: "1"
+
+routes:
+  - pattern: "/**"
+    target:
+      component: website
