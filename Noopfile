@@ -3,7 +3,7 @@ COMPONENT website service
 ROUTE -m GET *
 
 
-FROM node:16-alpine
+FROM node:16-alpine AS build
 
 WORKDIR iss-position-noop
 COPY package*.json ./
@@ -17,7 +17,6 @@ COPY --from=build iss-position-noop/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx
 
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
 
 ENV NODE_ENV production
 ENV NGINX_ENTRYPOINT_QUIET_LOGS 1
