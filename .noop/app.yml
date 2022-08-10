@@ -11,15 +11,15 @@ components:
           destination: ./
         - run: npm i
         - copy: .
-    #     - run: npm run build
-    #     - image: nginx:1-alpine
-    #       stage: nginx
-    #     - copy: iss-position-noop/build
-    #       destination: /usr/share/nginx/html/
-    #       from: main
-    #     - copy: nginx.conf
-    #       destination: /etc/nginx
-    # runtime:
-    #   command: 'nginx -g "daemon off;"'
-    #   variables:
-    #     NGINX_ENTRYPOINT_QUIET_LOGS: '1'
+        - run: npm run build
+        - image: nginx:1-alpine
+          stage: nginx
+        - copy: iss-position-noop/build
+          destination: /usr/share/nginx/html/
+          from: main
+        - copy: nginx.conf
+          destination: /etc/nginx
+    runtime:
+      command: 'nginx -g "daemon off;"'
+      variables:
+        NGINX_ENTRYPOINT_QUIET_LOGS: "1"

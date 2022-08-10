@@ -9,8 +9,15 @@ WORKDIR iss-position-noop
 COPY package*.json ./
 RUN npm i
 COPY . .
+RUN npm run build
+
+FROM nginx:1-alpine
+
+COPY --from=build iss-position-noop/build /usr/share/nginx/html
+COPY nginx.conf /etc/nginx
 
 EXPOSE 80
-CMD ["npm", "start"]
+CMD ["nginx", "-g", "daemon off;"]
 
 ENV NODE_ENV production
+ENV NGINX_ENTRYPOINT_QUIET_LOGS 1
