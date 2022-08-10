@@ -1,6 +1,5 @@
 {
   "name": "iss-position-noop",
-  "homepage": "https://iss.noop.app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
