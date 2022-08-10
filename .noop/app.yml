@@ -19,8 +19,6 @@ components:
           from: main
         - copy: nginx.conf
           destination: /etc/nginx
-    ports:
-      - "80:80"
     runtime:
       command: 'nginx -g "daemon off;"'
       variables:
