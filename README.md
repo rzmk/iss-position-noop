@@ -1,8 +1,8 @@
-# International Space Station Position SPA 🛰
+# International Space Station Position - Noop Edition 🛰
 
-[![Webapp demo](map-demo.gif)](https://rzmk.github.io/iss-position-spa)
+[![Webapp demo](map-demo.gif)](https://rzmk.github.io/iss-position-noop)
 
-Fetches the latitude and longitude of the International Space Station (ISS) every 2 seconds and displays the live position on a map with a progress bar.
+Fetches the latitude and longitude of the International Space Station (ISS) every 10 seconds and displays the live position on a map with a progress bar. Hosted using [https://noop.dev](https://noop.dev).
 
 ## Technologies
 
