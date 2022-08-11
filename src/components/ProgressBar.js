@@ -4,7 +4,7 @@ const ProgressBar = ({ progress }) => {
 			<div className="w-full bg-gray-600 rounded-full h-4 dark:bg-gray-500">
 				<div
 					className="bg-gray-200 h-4 rounded-full transition-all ease-in-out"
-					style={{ width: `${progress/5}%`, maxWidth: "100%" }}
+					style={{ width: `${progress}%`, maxWidth: "100%" }}
 				></div>
 			</div>
 		</div>

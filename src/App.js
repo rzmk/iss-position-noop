@@ -23,7 +23,7 @@ function App() {
 
 	useEffect(() => {
 		fetchISSData();
-		setInterval(fetchISSData, 10000);
+		setInterval(fetchISSData, 2000);
 		setInterval(() => {
 			setProgress((prev) => prev + 5);
 		}, 100);
