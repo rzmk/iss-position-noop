@@ -12,4 +12,4 @@ Fetches the latitude and longitude of the International Space Station (ISS) ever
 -   [react-icons](https://github.com/react-icons/react-icons)
 -   [react-simple-maps](https://github.com/zcreativelabs/react-simple-maps)
 -   [uiGradients](https://uigradients.com/#VisionsofGrandeur)
--   [GitHub Pages](https://pages.github.com/)
+-   [https://noop.dev](https://noop.dev).
